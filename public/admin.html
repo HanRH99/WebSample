@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+    <!-- Sign Out 버튼 -->
+    <div class="signout">
+        <a href="#" onclick="signOut()">Sign Out</a>
+    </div>
+
+    <!-- 사이드바 -->
+    <div class="sidebar">
+        <h2>관리자 메뉴</h2>
+        <ul>
+            <li><a href="#" onclick="showDashboard()">Dashboard</a></li>
+            <li><a href="#" onclick="showLiveMap()">Live Map</a></li>
+            <li><a href="#" onclick="showSchedule()">Schedule</a></li>
+        </ul>
+    </div>
+
+    <!-- 콘텐츠 영역 -->
+    <div class="content">
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="section">
+            <h2>Dashboard - 장비 관리</h2>
+            <button onclick="assignDriver()">장비 할당</button>
+            <button onclick="addEquipment()">장비 추가</button>
+            <button onclick="checkStatus()">상태 확인</button>
+        </div>
+
+        <!-- Live Map 섹션 -->
+        <div id="liveMap" class="section" style="display: none;">
+            <h2>Live Map</h2>
+            <div class="warehouse-layout">
+                <!-- 섹션 1: 주차된 트럭 영역 -->
+                <div class="parking-area">
+                    <div class="truck" id="truck1">Truck A</div>
+                    <div class="truck" id="truck2">Truck B</div>
+                    <div class="truck" id="truck3">Truck C</div>
+                </div>
+
+                <!-- 섹션 2: 창고 구역 -->
+                <div class="warehouse-area">
+                    <div class="warehouse-section" id="warehouse1">섹션 1</div>
+                    <div class="warehouse-section" id="warehouse2">섹션 2</div>
+                    <div class="warehouse-section" id="warehouse3">섹션 3</div>
+                    <div class="warehouse-section" id="warehouse4">섹션 4</div>
+                </div>
+
+                <!-- 섹션 3: 컨테이너 적재 구역 -->
+                <div class="loading-area">
+                    <div class="container" id="container1">Container A</div>
+                    <div class="container" id="container2">Container B</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schedule 섹션 (이벤트 로그 추가) -->
+        <div id="schedule" class="section" style="display: none;">
+            <h2>Schedule</h2>
+            <p>스케줄 관리 페이지입니다.</p>
+            <div class="event-log">
+                <h3>Event Log</h3>
+                <ul>
+                    <li>10:00 AM - 트럭 A 할당됨</li>
+                    <li>10:15 AM - 트럭 B 도착</li>
+                    <li>10:30 AM - 섹션 3에 컨테이너 적재 완료</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showDashboard() {
+            document.getElementById('dashboard').style.display = 'block';
+            document.getElementById('liveMap').style.display = 'none';
+            document.getElementById('schedule').style.display = 'none';
+        }
+
+        function showLiveMap() {
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('liveMap').style.display = 'block';  /* Live Map 표시 */
+            document.getElementById('schedule').style.display = 'none';
+        }
+
+        function showSchedule() {
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('liveMap').style.display = 'none';
+            document.getElementById('schedule').style.display = 'block';
+        }
+
+        function assignDriver() {
+            alert('드라이버에게 장비 할당');
+        }
+
+        function addEquipment() {
+            alert('새 장비 추가');
+        }
+
+        function checkStatus() {
+            alert('장비 상태 확인');
+        }
+
+        // 로그아웃 기능
+        function signOut() {
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>

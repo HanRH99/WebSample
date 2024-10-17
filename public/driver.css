@@ -1,0 +1,87 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    color: #fff;
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #555;
+}
+
+/* 콘텐츠 영역 */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.section {
+    display: none;
+}
+
+/* Sign Out 버튼 스타일 */
+.signout {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.signout a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+.signout a:hover {
+    color: #45a049;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

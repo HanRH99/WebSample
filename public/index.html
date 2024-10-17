@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/signin.css"> <!-- Sign In 페이지용 별도 CSS -->
+</head>
+<body>
+    <div class="login-container">
+        <h1>Sign In</h1>
+        <div class="login-box">
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <label for="role">Role:</label>
+                <select id="role" name="role" required>
+                    <option value="manager">Manager</option>
+                    <option value="driver">Driver</option>
+                </select>
+                <br>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <button type="submit">Sign In</button>
+            </form>
+            <p id="errorMessage" style="color: red; display: none;">Invalid username or password.</p>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();  // Prevent form submission
+            const role = document.getElementById('role').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Manager login validation
+            if (role === 'manager' && username === 'manager001' && password === 'manager001') {
+                window.location.href = '/admin';  // Redirect to admin page
+            }
+            // Driver login validation
+            else if (role === 'driver' && username === 'driver001' && password === 'driver001') {
+                window.location.href = '/driver';  // Redirect to driver page
+            }
+            // Show error message if login fails
+            else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
